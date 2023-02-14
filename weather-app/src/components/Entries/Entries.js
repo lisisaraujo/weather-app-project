@@ -1,15 +1,22 @@
-export default function Entries({ weatherIsGood, onDeleteActivity }) {
+import "./entries.css";
+
+export default function Entries({ weatherIsGood, onDeleteActivity, weather }) {
   return (
     <ul className="weather-list">
       {weatherIsGood.map((activity) => (
-        <li key={activity.id} className="entry-list__item">
+        <li
+          className={
+            weather.isGoodWeather ? "list-item class1" : "list-item class2"
+          }
+          key={activity.id}
+        >
           <p>{activity.name}</p>
           <button
             onClick={() => {
               onDeleteActivity(activity.id);
             }}
           >
-            Delete
+            X
           </button>
         </li>
       ))}

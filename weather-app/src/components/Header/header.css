@@ -1,0 +1,17 @@
+.weather-description {
+  max-height: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.class1 {
+  background-color: rgb(255, 166, 0);
+  color: white;
+}
+.class2 {
+  background-color: #282c34;
+  color: white;
+}

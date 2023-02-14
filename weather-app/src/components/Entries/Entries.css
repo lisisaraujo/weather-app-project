@@ -1,0 +1,36 @@
+.weather-list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.list-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 200px;
+  padding: 5px;
+  border-radius: 20px;
+
+  margin: 15px;
+}
+
+.list-item > button {
+  display: flex;
+
+  color: white;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.class1 {
+  background-color: rgb(255, 166, 0);
+  color: white;
+}
+.class2 {
+  background-color: #2553aeaf;
+  color: white;
+}

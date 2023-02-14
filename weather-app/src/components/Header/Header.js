@@ -1,16 +1,29 @@
+import "./header.css";
+
 export default function Header({ weather }) {
   return (
     <>
-      <header className="header">
-        <h1>
+      <header
+        className={
+          weather.isGoodWeather
+            ? "weather-description class1"
+            : "weather-description class2"
+        }
+      >
+        <h1 className="App-logo">
           {weather.condition}
           {weather.temperature}
         </h1>
         {weather.isGoodWeather === true && (
-          <p>The weather is awesome!! Go outise and:</p>
+          <p className="weather-description">
+            The weather is awesome!! <br /> Go outise and:
+          </p>
         )}
         {weather.isGoodWeather === false && (
-          <p>Bad weather outside! Here's what you can do now:</p>
+          <p className="weather-description">
+            Bad weather outside! <br />
+            Here's what you can do now:
+          </p>
         )}
       </header>
     </>
