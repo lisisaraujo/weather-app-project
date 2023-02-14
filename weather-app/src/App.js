@@ -4,12 +4,14 @@ import Entries from "./components/Entries/Entries";
 import Header from "./components/Header/Header";
 import { useState } from "react";
 import { uid } from "uid";
+import useLocalStorageState from "use-local-storage-state";
 
 function App() {
-  const [activities, setActivities] = useState({});
-
+  const [activities, setActivities] = useLocalStorageState("activities");
   function handleAddActivity(name, weather) {
+    console.log(name, weather);
     setActivities([
+      ...activities,
       {
         id: uid(),
         name: name,
