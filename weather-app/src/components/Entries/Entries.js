@@ -4,7 +4,13 @@ export default function Entries({ weatherIsGood, onDeleteActivity }) {
       {weatherIsGood.map((activity) => (
         <li key={activity.id} className="entry-list__item">
           <p>{activity.name}</p>
-          <button onClick={onDeleteActivity(activity.id)}>Delete</button>
+          <button
+            onClick={() => {
+              onDeleteActivity(activity.id);
+            }}
+          >
+            Delete
+          </button>
         </li>
       ))}
     </ul>

@@ -11,20 +11,25 @@ function App() {
   const [weather, setWeather] = useState({});
 
   useEffect(() => {
-    async function fetchApi() {
-      try {
-        const response = await fetch(
-          "https://example-apis.vercel.app/api/weather"
-        );
-        const data = await response.json();
-        console.log(data);
-        setWeather(data);
-      } catch (error) {
-        console.log(error);
-      }
-    }
     fetchApi();
+    const interval = setInterval(fetchApi, 5000);
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
+
+  async function fetchApi() {
+    try {
+      const response = await fetch(
+        "https://example-apis.vercel.app/api/weather"
+      );
+      const data = await response.json();
+      console.log(data);
+      setWeather(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   const [activities, setActivities] = useLocalStorageState("activities", {
     defaultValue: [],
@@ -48,24 +53,24 @@ function App() {
     const newActivities = activities.filter(
       (activity) => activity.id !== deletedId
     );
+    setActivities(newActivities);
+    console.log("its deleted", newActivities);
   }
 
   // from api
-  const isGoodWeather = weather.isGoodWeather;
+  const weatherCondition = weather.isGoodWeather;
 
   // activity from entries component
-  const activitiesIsGoodWeather = activities.filter(
-    (activity) => activity.goodWeather === isGoodWeather
+  const activitiesWeatherCondition = activities.filter(
+    (activity) => activity.goodWeather === weatherCondition
   );
-  console.log("good weather activitz", activitiesIsGoodWeather);
-
-  // const [filter, setFilter] = useState("");
+  console.log("good weather activitz", activitiesWeatherCondition);
 
   return (
     <>
       <Header weather={weather}></Header>
       <Entries
-        weatherIsGood={activitiesIsGoodWeather}
+        weatherIsGood={activitiesWeatherCondition}
         onDeleteActivity={handleDeleteActivity}
       />
       <Form onAddActivity={handleAddActivity} />
