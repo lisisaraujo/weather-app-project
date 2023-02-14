@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Form from "./components/Form/Form";
 import Entries from "./components/Entries/Entries";
@@ -7,20 +6,19 @@ import { useState } from "react";
 import { uid } from "uid";
 
 function App() {
-  const [activities, setActivities] = useState("");
-  const data = [];
+  const [activities, setActivities] = useState({});
 
   function handleAddActivity(name, weather) {
-    setActivities({
-      id: uid(),
-      name: name,
-      goodWeather: weather,
-    });
-    // console.log(name, weather);
-
-    // console.log(data);
+    setActivities([
+      {
+        id: uid(),
+        name: name,
+        goodWeather: weather,
+      },
+    ]);
   }
-  data.push(activities);
+  console.log(activities);
+
   return (
     <>
       <Header />
