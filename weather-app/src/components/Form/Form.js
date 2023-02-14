@@ -1,6 +1,6 @@
 import "./form.css";
 
-export default function Form({ onAddActivity }) {
+export default function Form({ onAddActivity, weather }) {
   function handleForm(event) {
     event.preventDefault();
     const name = event.target.name.value;
@@ -10,8 +10,11 @@ export default function Form({ onAddActivity }) {
     event.target.elements.name.focus();
   }
   return (
-    <form className="form" onSubmit={handleForm}>
-      <h1 className="form-header">Add New Activity</h1>
+    <form
+      className={weather.isGoodWeather ? "form class1" : "form class2"}
+      onSubmit={handleForm}
+    >
+      <h2 className="form-header">Add New Activity</h2>
       <div className="weather-activity activity-name">
         <label className="label" htmlFor="name">
           Name:

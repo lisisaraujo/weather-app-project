@@ -12,17 +12,17 @@ export default function Header({ weather }) {
       >
         <h1 className="App-logo">
           {weather.condition}
-          {weather.temperature}
+          <br />
+          {weather.temperature}°
         </h1>
         {weather.isGoodWeather === true && (
           <p className="weather-description">
-            The weather is awesome!! <br /> Go outise and:
+            The weather is awesome! <br /> Go outise and:
           </p>
         )}
         {weather.isGoodWeather === false && (
           <p className="weather-description">
-            Bad weather outside! <br />
-            Here's what you can do now:
+            Bad weather outside! <br /> Stay home and:
           </p>
         )}
       </header>

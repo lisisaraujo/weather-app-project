@@ -10,14 +10,6 @@ function App() {
   // weather api fetch
   const [weather, setWeather] = useState({});
 
-  useEffect(() => {
-    fetchApi();
-    const interval = setInterval(fetchApi, 5000);
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
-
   async function fetchApi() {
     try {
       const response = await fetch(
@@ -30,6 +22,14 @@ function App() {
       console.log(error);
     }
   }
+
+  useEffect(() => {
+    fetchApi();
+    const interval = setInterval(fetchApi, 10000);
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
 
   const [activities, setActivities] = useLocalStorageState("activities", {
     defaultValue: [],
@@ -62,16 +62,21 @@ function App() {
     (activity) => activity.goodWeather === weatherCondition
   );
 
+  // set background image by adding css class
+  weather.isGoodWeather
+    ? document.body.classList.add("good-weather")
+    : document.body.classList.remove("good-weather");
+
   return (
-    <html className="app">
+    <>
       <Header weather={weather}></Header>
       <Entries
         weatherIsGood={activitiesWeatherCondition}
         onDeleteActivity={handleDeleteActivity}
         weather={weather}
       />
-      <Form onAddActivity={handleAddActivity} />
-    </html>
+      <Form weather={weather} onAddActivity={handleAddActivity} />
+    </>
   );
 }
 
