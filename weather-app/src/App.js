@@ -21,12 +21,20 @@ function App() {
       },
     ]);
   }
-  console.log(activities);
+  console.log("all activities:", activities);
+
+  const isGoodWeather = true;
+  const activitiesIsGoodWeather = activities.filter(
+    (activity) => activity.goodWeather === isGoodWeather
+  );
+  console.log("good weather activitz", activitiesIsGoodWeather);
+
+  // const [filter, setFilter] = useState("");
 
   return (
     <>
       <Header />
-      <Entries />
+      <Entries weatherIsGood={activitiesIsGoodWeather} />
       <Form onAddActivity={handleAddActivity} />
     </>
   );
