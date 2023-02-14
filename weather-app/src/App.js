@@ -7,7 +7,9 @@ import { uid } from "uid";
 import useLocalStorageState from "use-local-storage-state";
 
 function App() {
-  const [activities, setActivities] = useLocalStorageState("activities");
+  const [activities, setActivities] = useLocalStorageState("activities", {
+    defaultValue: [],
+  });
   function handleAddActivity(name, weather) {
     console.log(name, weather);
     setActivities([
