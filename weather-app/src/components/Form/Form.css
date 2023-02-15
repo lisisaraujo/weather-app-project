@@ -2,15 +2,14 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  border: 100px;
-  padding: 20px 0px;
 }
 
 .weather-activity {
   display: flex;
   flex-direction: row;
-  margin: 10px;
+  /* margin: 10px; */
   justify-content: space-between;
+  padding: 10px;
 }
 
 .form-header {
@@ -31,4 +30,5 @@ button {
   border-color: #0558ff;
   color: #0558ff;
   font-size: 1.1rem;
+  margin: 10px;
 }
