@@ -1,4 +1,4 @@
-import "./entries.css";
+import "./Entries.css";
 
 export default function Entries({ weatherIsGood, onDeleteActivity, weather }) {
   return (
