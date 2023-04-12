@@ -17,6 +17,7 @@
 
 .list-item > button {
   display: flex;
+  justify-content: space-between;
   color: white;
   background-color: transparent;
   border: none;
