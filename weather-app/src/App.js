@@ -25,7 +25,7 @@ function App() {
 
   useEffect(() => {
     fetchApi();
-    const interval = setInterval(fetchApi, 10000);
+    const interval = setInterval(fetchApi, 5000);
     return () => {
       clearInterval(interval);
     };
