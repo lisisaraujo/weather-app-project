@@ -16,9 +16,8 @@ export default function Header({ weather }) {
           {weather.temperature}°
         </h1>
         {weather.isGoodWeather === true && (
-
           <p className="weather-description">
-            The weather is awesome! <br /> Go outise and:
+            The weather is awesome! <br /> Go outside and:
           </p>
         )}
         {weather.isGoodWeather === false && (
