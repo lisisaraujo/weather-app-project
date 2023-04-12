@@ -1,0 +1,10 @@
+.weather-description {
+  height: 30vmin;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-radius: 20px;
+  padding: 0px 25px;
+  margin: 30px 15px;
+}

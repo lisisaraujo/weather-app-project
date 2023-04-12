@@ -1,0 +1,34 @@
+.form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.weather-activity {
+  display: flex;
+  flex-direction: row;
+  /* margin: 10px; */
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.form-header {
+  text-align: center;
+}
+
+input#name {
+  background-color: rgba(245, 245, 245, 0.245);
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.306);
+}
+
+button {
+  height: 40px;
+  width: 100px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.373);
+  border-color: #0558ff;
+  color: #0558ff;
+  font-size: 1.1rem;
+  margin: 10px;
+}
