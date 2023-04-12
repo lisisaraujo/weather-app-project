@@ -17,7 +17,6 @@ function App() {
       );
       const data = await response.json();
       setWeather(data);
-      console.log(data);
     } catch (error) {
       console.log(error);
     }
