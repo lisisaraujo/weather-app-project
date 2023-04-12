@@ -24,7 +24,6 @@ function App() {
         "https://example-apis.vercel.app/api/weather"
       );
       const data = await response.json();
-      console.log(data);
       setWeather(data);
     } catch (error) {
       console.log(error);
@@ -35,7 +34,6 @@ function App() {
     defaultValue: [],
   });
   function handleAddActivity(name, weather) {
-    console.log(name, weather);
     setActivities([
       ...activities,
       {
@@ -45,7 +43,6 @@ function App() {
       },
     ]);
   }
-  console.log("all activities:", activities);
 
   // delete entry function
 
@@ -54,7 +51,6 @@ function App() {
       (activity) => activity.id !== deletedId
     );
     setActivities(newActivities);
-    console.log("its deleted", newActivities);
   }
 
   // from api
@@ -64,7 +60,6 @@ function App() {
   const activitiesWeatherCondition = activities.filter(
     (activity) => activity.goodWeather === weatherCondition
   );
-  console.log("good weather activitz", activitiesWeatherCondition);
 
   return (
     <>
